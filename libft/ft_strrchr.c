@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: toramo <toramo.student@hive.fi>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/30 10:19:31 by toramo            #+#    #+#             */
+/*   Updated: 2023/10/31 11:46:20 by toramo           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
+{
+	int		i;
+
+	i = ft_strlen(s);
+	while (i > 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i--;
+	}
+	if (s[i] == (char)c)
+		return ((char *)s + i);
+	return (0);
+}
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char *str;
+	char *input;
+
+	input = malloc(sizeof(char) * 10);
+	str = malloc(sizeof(char) * 100);
+	ft_strlcpy(input, "teste", 6);
+	str = ft_strrchr(input, '\0');
+	printf("%s", str);
+}*/
